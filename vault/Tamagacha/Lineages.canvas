@@ -18,7 +18,6 @@
 		{"id":"4d863ec9e0fd5ae6","type":"file","file":"images/dog1.jpeg","x":1905,"y":4785,"width":399,"height":218},
 		{"id":"39b825e7d52c258d","type":"file","file":"images/detective1.jpeg","x":1921,"y":2442,"width":399,"height":218},
 		{"id":"8b5be117e1f14047","type":"file","file":"images/cactus.jpeg","x":5534,"y":5121,"width":399,"height":218},
-		{"id":"028ea979181028d2","type":"file","file":"images/wolf1.jpeg","x":1876,"y":4469,"width":399,"height":218},
 		{"id":"2707279c480f85c6","type":"file","file":"images/beekeeper.jpeg","x":5000,"y":4894,"width":399,"height":218},
 		{"id":"ab9bf0bae6954889","type":"file","file":"images/rockstar2.jpeg","x":3040,"y":1848,"width":399,"height":218},
 		{"id":"ca83c2c7417229ee","type":"file","file":"images/rockstar.jpeg","x":2620,"y":1848,"width":399,"height":218},
@@ -73,11 +72,8 @@
 		{"id":"60a7acfad64370a9","type":"file","file":"images/priest.jpeg","x":5320,"y":2604,"width":399,"height":218},
 		{"id":"9ad132465735ce2d","type":"file","file":"images/bishop.jpeg","x":5760,"y":2604,"width":399,"height":218},
 		{"id":"05f913e85ff8e21f","type":"file","file":"images/pope.jpeg","x":6200,"y":2604,"width":399,"height":218},
-		{"id":"e8c19e8755d6cffe","type":"file","file":"images/shaggy.jpeg","x":1876,"y":4220,"width":399,"height":218},
 		{"id":"6c57912ba5d43c15","type":"file","file":"images/pug.jpeg","x":480,"y":4469,"width":399,"height":218},
 		{"id":"3d4f95a43bda0b5e","type":"file","file":"images/pug-toys.jpeg","x":61,"y":4469,"width":399,"height":218},
-		{"id":"6368bc3f8e70ceae","type":"file","file":"images/wolf3.jpeg","x":1040,"y":4469,"width":399,"height":218},
-		{"id":"38b81b21690562bd","type":"file","file":"images/wolf2.jpeg","x":1460,"y":4469,"width":399,"height":218},
 		{"id":"58b5155cd1f1c545","type":"file","file":"images/beagle2.jpeg","x":1041,"y":4785,"width":399,"height":218},
 		{"id":"af5fd0d63a5d034d","type":"file","file":"images/beagle3.jpeg","x":620,"y":4785,"width":399,"height":218},
 		{"id":"89e9a6c0410abd77","type":"file","file":"images/beagle4.jpeg","x":200,"y":4785,"width":399,"height":218},
@@ -194,7 +190,11 @@
 		{"id":"621114363443c83f","type":"file","file":"images/elemental-water.jpeg","x":3879,"y":2871,"width":399,"height":218},
 		{"id":"89196ac827f8639c","type":"file","file":"images/element-earth.jpeg","x":3879,"y":3149,"width":399,"height":218},
 		{"id":"4aa1923ba1691af6","type":"file","file":"images/element-fire.jpeg","x":3395,"y":3149,"width":399,"height":218},
-		{"id":"7aa01c0fb60e80bc","type":"file","file":"images/element-air.jpeg","x":3395,"y":2871,"width":399,"height":218}
+		{"id":"7aa01c0fb60e80bc","type":"file","file":"images/element-air.jpeg","x":3395,"y":2871,"width":399,"height":218},
+		{"id":"028ea979181028d2","type":"file","file":"images/wolf1.jpeg","x":1905,"y":4469,"width":399,"height":218},
+		{"id":"e8c19e8755d6cffe","type":"file","file":"images/shaggy.jpeg","x":1905,"y":4220,"width":399,"height":218},
+		{"id":"6368bc3f8e70ceae","type":"file","file":"images/wolf3.jpeg","x":1041,"y":4469,"width":399,"height":218},
+		{"id":"38b81b21690562bd","type":"file","file":"images/wolf2.jpeg","x":1460,"y":4469,"width":399,"height":218}
 	],
 	"edges":[
 		{"id":"4d04e01df5c2e08c","fromNode":"bf6e7da35d0fae51","fromSide":"top","toNode":"cbc2ecd57330c9d6","toSide":"bottom"},
@@ -411,6 +411,7 @@
 		{"id":"dd5822baba493899","fromNode":"343b724d4481f5f0","fromSide":"right","toNode":"b45ede553232bf4e","toSide":"bottom"},
 		{"id":"d23157c806f3e924","fromNode":"607ea4b3a1f7e805","fromSide":"right","toNode":"621114363443c83f","toSide":"bottom"},
 		{"id":"86521fb96bfc2351","fromNode":"c7cd8cf94075d528","fromSide":"left","toNode":"b945930e84c2112a","toSide":"top"},
-		{"id":"a59d12ae5a348342","fromNode":"bf6e7da35d0fae51","fromSide":"right","toNode":"c89adafe86a9fa2b","toSide":"left"}
+		{"id":"a59d12ae5a348342","fromNode":"bf6e7da35d0fae51","fromSide":"right","toNode":"c89adafe86a9fa2b","toSide":"left"},
+		{"id":"66c71a924b3f7210","fromNode":"89e9a6c0410abd77","fromSide":"top","toNode":"edfbc485051379a0","toSide":"bottom"}
 	]
 }
