@@ -1,0 +1,214 @@
+{
+  "main": {
+    "id": "be6f37fd909bf07d",
+    "type": "split",
+    "children": [
+      {
+        "id": "99e2383a15ed2340",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a641834495dcf630",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Lineages.canvas",
+                "viewState": {
+                  "x": 2134.424425602873,
+                  "y": 5091.7300833545,
+                  "zoom": -2.681019752621656
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Lineages"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d94c94f8b8d31c61",
+    "type": "split",
+    "children": [
+      {
+        "id": "d561a47fed3a8c18",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c5f5dea2d5f7c4aa",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "2d18143f16dd0561",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "421c80c5a74b1e8b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "6249194cda545ffb",
+    "type": "split",
+    "children": [
+      {
+        "id": "735b6a6134b6cdd7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9d9a3bbf5e5d7ea8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Lineages.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "fcbe3193c92bd244",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Lineages.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "7b721c1e60e9ae43",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "4ca88a1a857b339a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "14b23e11d54caa8f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Lineages.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "a641834495dcf630",
+  "lastOpenFiles": [
+    "Welcome.md",
+    "Lineages.canvas",
+    "Lineages 1.canvas",
+    "images/xprincess-1.jpeg",
+    "images/monk.jpeg",
+    "images/lich.jpeg",
+    "images/bishop.jpeg",
+    "images/axolotl-crossbow.jpeg",
+    "images/pug.jpeg",
+    "images/pug-toys.jpeg",
+    "images/diver3.jpeg",
+    "images/diver2.jpeg",
+    "images/monk2.jpeg",
+    "new images",
+    "images",
+    "Untitled.md"
+  ]
+}
