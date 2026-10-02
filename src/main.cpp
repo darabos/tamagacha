@@ -1,293 +1,196 @@
 #include <M5Unified.h>
 #include <LittleFS.h>
+#include <math.h>
 
-// --------------------------------------------------
-// Animation frames
-// --------------------------------------------------
+namespace {
 
-const char* idleFrames[] = {
-    "/idle0.png",
-    "/idle1.png",
-    "/idle2.png"
+constexpr unsigned long FRAME_INTERVAL_MS = 1000;
+constexpr unsigned long HUNGER_DURATION_MS = 2UL * 60UL * 1000UL;
+
+enum CharacterId {
+    BASE,
+    CAT1,
+    CAT2,
+    DIVER1,
+    DIVER2,
+    CHARACTER_COUNT
 };
 
-const char* hungryFrames[] = {
-    "/hungry0.png",
-    "/hungry1.png"
+const CharacterId baseEvolutions[] = {CAT1, DIVER1};
+const CharacterId cat1Evolutions[] = {CAT2, BASE};
+const CharacterId cat2Evolutions[] = {CAT1};
+const CharacterId diver1Evolutions[] = {DIVER2, BASE};
+const CharacterId diver2Evolutions[] = {DIVER1};
+
+struct CharacterInfo {
+    const char* name;
+    const CharacterId* evolutions;
+    uint8_t evolutionCount;
 };
 
-const char* eatFrames[] = {
-    "/eat0.png",
-    "/eat1.png",
-    "/eat2.png",
-    "/eat3.png"
+const CharacterInfo characters[CHARACTER_COUNT] = {
+    {"base", baseEvolutions, 2},
+    {"cat1", cat1Evolutions, 2},
+    {"cat2", cat2Evolutions, 1},
+    {"diver1", diver1Evolutions, 2},
+    {"diver2", diver2Evolutions, 1}
 };
 
-const int IDLE_FRAME_COUNT = 3;
-const int HUNGRY_FRAME_COUNT = 2;
-const int EAT_FRAME_COUNT = 4;
-
-
-// --------------------------------------------------
-// Timing
-// --------------------------------------------------
-
-// Animation speeds
-const unsigned long IDLE_FRAME_TIME   = 500;
-const unsigned long HUNGRY_FRAME_TIME = 600;
-const unsigned long EAT_FRAME_TIME    = 150;
-
-// Time to go from completely fed to completely hungry.
-//
-// 2 minutes is convenient for testing.
-// Change this to:
-//   30UL * 60UL * 1000UL       // 30 minutes
-//   2UL * 60UL * 60UL * 1000UL // 2 hours
-// etc.
-const unsigned long HUNGER_DURATION = 2UL * 60UL * 1000UL;
-
-// At this percentage, the creature starts showing
-// the hungry animation.
-const int HUNGER_THRESHOLD = 60;
-
-
-// --------------------------------------------------
-// Game state
-// --------------------------------------------------
-
-enum State {
-    IDLE,
-    HUNGRY,
-    EATING
-};
-
-State state = IDLE;
-
-int currentFrame = 0;
-
+CharacterId currentCharacter = BASE;
+CharacterId evolutionTarget = BASE;
 unsigned long lastFrameTime = 0;
-
-// Time when the creature was last fed.
 unsigned long lastFedTime = 0;
+float evolutionRotationDegrees = 0.0f;
+uint32_t lastImuTime = 0;
+bool evolutionMode = false;
+bool filesystemReady = false;
 
-
-// --------------------------------------------------
-// Drawing
-// --------------------------------------------------
-
-void drawFrame(const char* filename)
+int hungerPercent()
 {
-    M5.Display.fillScreen(TFT_BLACK);
-
-    if (!LittleFS.exists(filename)) {
-        M5.Display.setCursor(10, 10);
-        M5.Display.setTextSize(2);
-        M5.Display.printf("Missing:\n%s", filename);
-        return;
-    }
-
-    M5.Display.drawPngFile(LittleFS, filename, 0, 0);
-}
-
-
-// --------------------------------------------------
-// Hunger
-// --------------------------------------------------
-
-int getHunger()
-{
-    unsigned long elapsed = millis() - lastFedTime;
-
-    if (elapsed >= HUNGER_DURATION) {
+    const unsigned long elapsed = millis() - lastFedTime;
+    if (elapsed >= HUNGER_DURATION_MS) {
         return 100;
     }
-
-    return (elapsed * 100UL) / HUNGER_DURATION;
+    return (elapsed * 100UL) / HUNGER_DURATION_MS;
 }
 
-
-void updateHunger()
+void drawFrame(CharacterId character, uint8_t frame)
 {
-    // Eating is handled separately.
-    if (state == EATING) {
-        return;
+    char filename[48];
+    snprintf(filename, sizeof(filename), "/assets/%s/%u.jpg",
+             characters[character].name, frame);
+
+    M5.Display.fillScreen(TFT_BLACK);
+    File image = LittleFS.open(filename, "r");
+    M5.Display.drawJpg(static_cast<Stream*>(&image), 0, 0);
+}
+
+void startEvolution()
+{
+    evolutionMode = true;
+    evolutionTarget = currentCharacter;
+    evolutionRotationDegrees = 0.0f;
+    lastImuTime = micros();
+    drawFrame(currentCharacter, 7);
+}
+
+void updateEvolutionPreview()
+{
+    const auto imuData = M5.Imu.getImuData();
+    const uint32_t now = micros();
+    const uint32_t elapsedMicros = now - lastImuTime;
+    lastImuTime = now;
+
+    evolutionRotationDegrees += imuData.gyro.x * (elapsedMicros / 1000000.0f);
+    evolutionRotationDegrees = fmodf(evolutionRotationDegrees, 360.0f);
+    if (evolutionRotationDegrees < 0.0f) {
+        evolutionRotationDegrees += 360.0f;
     }
 
-    int hunger = getHunger();
+    const CharacterInfo& current = characters[currentCharacter];
+    const uint8_t segmentCount = current.evolutionCount + 1;
+    const float segmentWidth = 360.0f / segmentCount;
+    const uint8_t segment = static_cast<uint8_t>(
+        floorf(evolutionRotationDegrees / segmentWidth + 0.5f)) % segmentCount;
 
-    // Once sufficiently hungry, switch to the hungry state.
-    if (hunger >= HUNGER_THRESHOLD) {
+    const CharacterId target = segment == 0
+        ? currentCharacter
+        : current.evolutions[segment - 1];
 
-        if (state != HUNGRY) {
-            state = HUNGRY;
-            currentFrame = 0;
-            lastFrameTime = 0;
-        }
+    if (target != evolutionTarget) {
+        evolutionTarget = target;
+        drawFrame(evolutionTarget, 7);
     }
 }
 
-
-// --------------------------------------------------
-// Animation
-// --------------------------------------------------
-
-void updateAnimation()
+void finishEvolution()
 {
-    unsigned long now = millis();
+    evolutionMode = false;
+    if (evolutionTarget != currentCharacter) {
+        currentCharacter = evolutionTarget;
+        drawFrame(currentCharacter, 0);
+    }
+    lastFrameTime = millis();
+}
 
-    unsigned long frameTime;
+void feedCharacter()
+{
+    lastFedTime = millis();
+    drawFrame(currentCharacter, static_cast<uint8_t>(5 + random(0, 2)));
+    lastFrameTime = millis();
+}
 
-    switch (state) {
+void updateButtons(bool imuUpdated)
+{
+    const bool evolutionButtonPressed = M5.BtnB.wasPressed();
+    const bool evolutionButtonReleased = M5.BtnB.wasReleased();
 
-        case IDLE:
-            frameTime = IDLE_FRAME_TIME;
-            break;
-
-        case HUNGRY:
-            frameTime = HUNGRY_FRAME_TIME;
-            break;
-
-        case EATING:
-            frameTime = EAT_FRAME_TIME;
-            break;
+    if (evolutionButtonPressed) {
+        startEvolution();
     }
 
-    if (now - lastFrameTime < frameTime) {
+    if (evolutionMode && M5.BtnB.isPressed() && imuUpdated) {
+        updateEvolutionPreview();
+    }
+
+    if (evolutionButtonReleased) {
+        finishEvolution();
+    }
+
+    if (!evolutionButtonPressed && !evolutionButtonReleased &&
+        !evolutionMode && M5.BtnA.wasPressed()) {
+        feedCharacter();
+    }
+}
+
+void updateCharacterFrame()
+{
+    const unsigned long now = millis();
+    if (now - lastFrameTime < FRAME_INTERVAL_MS) {
         return;
     }
 
     lastFrameTime = now;
-
-
-    switch (state) {
-
-        // ------------------------------------------
-        // Idle animation
-        // ------------------------------------------
-
-        case IDLE:
-
-            drawFrame(idleFrames[currentFrame]);
-
-            currentFrame++;
-
-            if (currentFrame >= IDLE_FRAME_COUNT) {
-                currentFrame = 0;
-            }
-
-            break;
-
-
-        // ------------------------------------------
-        // Hungry animation
-        // ------------------------------------------
-
-        case HUNGRY:
-
-            drawFrame(hungryFrames[currentFrame]);
-
-            currentFrame++;
-
-            if (currentFrame >= HUNGRY_FRAME_COUNT) {
-                currentFrame = 0;
-            }
-
-            break;
-
-
-        // ------------------------------------------
-        // Eating animation
-        // ------------------------------------------
-
-        case EATING:
-
-            drawFrame(eatFrames[currentFrame]);
-
-            currentFrame++;
-
-            if (currentFrame >= EAT_FRAME_COUNT) {
-
-                // Finished eating.
-                //
-                // Reset the hunger timer.
-                lastFedTime = millis();
-
-                // Return to idle.
-                state = IDLE;
-                currentFrame = 0;
-                lastFrameTime = 0;
-
-                drawFrame(idleFrames[0]);
-            }
-
-            break;
+    const int hunger = hungerPercent();
+    if (random(0, 100) < hunger) {
+        drawFrame(currentCharacter, 4);
+    } else {
+        drawFrame(currentCharacter, static_cast<uint8_t>(random(0, 4)));
     }
 }
 
-
-// --------------------------------------------------
-// Button
-// --------------------------------------------------
-
-void updateButton()
-{
-    M5.update();
-
-    if (!M5.BtnA.wasPressed()) {
-        return;
-    }
-
-    // Don't interrupt eating.
-    if (state == EATING) {
-        return;
-    }
-
-    // Start eating.
-    state = EATING;
-    currentFrame = 0;
-    lastFrameTime = 0;
-}
-
-
-// --------------------------------------------------
-// Setup
-// --------------------------------------------------
+} // namespace
 
 void setup()
 {
     auto cfg = M5.config();
     M5.begin(cfg);
-
     M5.Display.setRotation(0);
     M5.Display.fillScreen(TFT_BLACK);
 
-    // Mount filesystem containing PNGs.
     if (!LittleFS.begin(true)) {
-
         M5.Display.setCursor(10, 10);
         M5.Display.setTextSize(2);
         M5.Display.println("LittleFS failed!");
-
         return;
     }
 
-    // Start completely fed.
+    filesystemReady = true;
+    randomSeed(micros());
     lastFedTime = millis();
-
-    // Show first frame immediately.
-    drawFrame(idleFrames[0]);
+    lastFrameTime = millis();
+    drawFrame(currentCharacter, 0);
 }
-
-
-// --------------------------------------------------
-// Main loop
-// --------------------------------------------------
 
 void loop()
 {
-    updateButton();
-    updateHunger();
-    updateAnimation();
+    M5.update();
+    const bool imuUpdated = M5.Imu.update();
+    updateButtons(imuUpdated);
+
+    if (filesystemReady && !evolutionMode) {
+        updateCharacterFrame();
+    }
 
     delay(5);
 }

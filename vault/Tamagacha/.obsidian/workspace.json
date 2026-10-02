@@ -15,9 +15,9 @@
               "state": {
                 "file": "Lineages.canvas",
                 "viewState": {
-                  "x": 3017.553764840332,
-                  "y": 3404.7865934662864,
-                  "zoom": -2.488374027709172
+                  "x": 3164.3214951265336,
+                  "y": 5452.213923126406,
+                  "zoom": -0.9562317076325483
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -194,8 +194,9 @@
   },
   "active": "a641834495dcf630",
   "lastOpenFiles": [
-    "Welcome.md",
+    "images/diver1.jpeg",
     "Lineages.canvas",
+    "Welcome.md",
     "Lineages 1.canvas",
     "images/xprincess-1.jpeg",
     "images/monk.jpeg",
