@@ -8,34 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a641834495dcf630",
+            "id": "a4dd871fdcdd547b",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
                 "file": "Lineages.canvas",
                 "viewState": {
-                  "x": 1339.8423393962244,
-                  "y": 4543.621432038919,
-                  "zoom": -2.682906796634198
+                  "x": 3259.5,
+                  "y": 4434.5,
+                  "zoom": -3.59489938229056
                 }
               },
               "icon": "lucide-layout-dashboard",
               "title": "Lineages"
-            }
-          },
-          {
-            "id": "a4dd871fdcdd547b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Wishlist.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Wishlist"
             }
           }
         ]
@@ -206,21 +192,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "a641834495dcf630",
+  "active": "a4dd871fdcdd547b",
   "lastOpenFiles": [
-    "hello-kitty-long.jpeg",
-    "hello-kitty.jpeg",
-    "kuromi.jpeg",
-    "my-sweet-piano.jpeg",
-    "my-sweet-piano-green.jpeg",
-    "kuromi1.jpeg",
-    "kuromi-good.jpeg",
-    "mymelo1.jpeg",
-    "mymelo.jpeg",
-    "mymelo-pets.jpeg",
     "Wishlist.md",
+    "images/panda.jpeg",
+    "images/eel.jpeg",
+    "images/beaver.jpeg",
     "Lineages.canvas",
-    "crow.jpeg",
+    "images/red-panda.jpeg",
+    "images/weasel.jpeg",
+    "images/lion-adult.jpeg",
+    "images/black-panther.jpeg",
+    "images/octocat.jpeg",
+    "images/octopus.jpeg",
+    "images/cheetah.jpeg",
     "Welcome.md",
     "Lineages 1.canvas",
     "new images",
