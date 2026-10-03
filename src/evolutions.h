@@ -34,203 +34,208 @@ enum CharacterId {
     char_cabbage2 = 31,
     char_cactus = 32,
     char_capybara = 33,
-    char_capybara2 = 34,
-    char_cat1 = 35,
-    char_cat2 = 36,
-    char_cat3 = 37,
-    char_cheetah = 38,
-    char_cleric = 39,
-    char_crab1 = 40,
-    char_crab2 = 41,
-    char_crow = 42,
-    char_crow_earth = 43,
-    char_crow_jupiter = 44,
-    char_crow_magical = 45,
-    char_crow_mars = 46,
-    char_crow_mercury = 47,
-    char_crow_moon = 48,
-    char_crow_moon_2 = 49,
-    char_crow_neptune = 50,
-    char_crow_pluto = 51,
-    char_crow_saturn = 52,
-    char_crow_uranus = 53,
-    char_crow_venus = 54,
-    char_detective1 = 55,
-    char_detective2 = 56,
-    char_devil1 = 57,
-    char_devil2 = 58,
-    char_displacer_beast = 59,
-    char_diver1 = 60,
-    char_diver2 = 61,
-    char_diver3 = 62,
-    char_dog1 = 63,
-    char_dragon1 = 64,
-    char_dragon2 = 65,
-    char_dragon3_fire = 66,
-    char_dragon3_ice = 67,
-    char_druid = 68,
-    char_duck1 = 69,
-    char_duck2 = 70,
-    char_duck3 = 71,
-    char_eel = 72,
-    char_element_air = 73,
-    char_element_earth = 74,
-    char_element_fire = 75,
-    char_elemental_water = 76,
-    char_emerald = 77,
-    char_explorer = 78,
-    char_friar = 79,
-    char_frog1 = 80,
-    char_frog2 = 81,
-    char_frog3 = 82,
-    char_frog4 = 83,
-    char_goblin = 84,
-    char_hair = 85,
-    char_hamburger = 86,
-    char_hello_kitty = 87,
-    char_hello_kitty_long = 88,
-    char_honey_snail = 89,
-    char_icecream1 = 90,
-    char_icecream2 = 91,
-    char_karate1 = 92,
-    char_karate2 = 93,
-    char_knight_amigurumi = 94,
-    char_knight_axe = 95,
-    char_knight_banner = 96,
-    char_knight_blue = 97,
-    char_knight_blue_swords = 98,
-    char_knight_dual_swords = 99,
-    char_knight_evil1 = 100,
-    char_knight_evil3 = 101,
-    char_knight_gold = 102,
-    char_knight_gold_red_swords = 103,
-    char_knight_ice_cream_vanilla = 104,
-    char_knight_ice_cream_various = 105,
-    char_knight_octopus_2 = 106,
-    char_knight_octopus_3 = 107,
-    char_knight_pegasus = 108,
-    char_knight_pink = 109,
-    char_knight_red_swords = 110,
-    char_knight_red_swords_dragon1 = 111,
-    char_knight_red_swords_dragon2 = 112,
-    char_knight_scifi = 113,
-    char_knight1 = 114,
-    char_knight2 = 115,
-    char_knight4 = 116,
-    char_knight4b = 117,
-    char_knight5b = 118,
-    char_kuromi = 119,
-    char_kuromi_good = 120,
-    char_kuromi1 = 121,
-    char_laser_sword = 122,
-    char_lich = 123,
-    char_lion_adult = 124,
-    char_mermaid1 = 125,
-    char_mermaid2a = 126,
-    char_mermaid2b = 127,
-    char_mermaid2c = 128,
-    char_mermaid3a = 129,
-    char_mermaid4a = 130,
-    char_monk = 131,
-    char_monk_elemental = 132,
-    char_monk3 = 133,
-    char_mummy = 134,
-    char_mummy2 = 135,
-    char_mummy3 = 136,
-    char_mushroom_frogs_1 = 137,
-    char_mushroom_frogs_2 = 138,
-    char_mushroom_frogs_3 = 139,
-    char_mushroom1 = 140,
-    char_mushroom2a = 141,
-    char_mushroom2b = 142,
-    char_mushroom3a = 143,
-    char_mushroom3c = 144,
-    char_mushroom4a = 145,
-    char_mustache_chef = 146,
-    char_mustache_painter = 147,
-    char_mustache1 = 148,
-    char_mustache2a = 149,
-    char_mustache2b = 150,
-    char_my_sweet_piano = 151,
-    char_my_sweet_piano_green = 152,
-    char_mymelo = 153,
-    char_mymelo_pets = 154,
-    char_mymelo1 = 155,
-    char_ninja = 156,
-    char_octocat = 157,
-    char_octopanther = 158,
-    char_octopus = 159,
-    char_octopus1 = 160,
-    char_octopus2 = 161,
-    char_octopus3 = 162,
-    char_paladin = 163,
-    char_panda = 164,
-    char_penguin1 = 165,
-    char_penguin2a = 166,
-    char_penguin2b = 167,
-    char_penguin2c = 168,
-    char_pizza = 169,
-    char_plant1 = 170,
-    char_plant2 = 171,
-    char_plant3 = 172,
-    char_pope = 173,
-    char_popstar = 174,
-    char_postman = 175,
-    char_postman2 = 176,
-    char_postman3 = 177,
-    char_priest = 178,
-    char_princess = 179,
-    char_princess_blue = 180,
-    char_princess_red = 181,
-    char_princess_white = 182,
-    char_princess_white_hamster = 183,
-    char_princess_yellow = 184,
-    char_pug = 185,
-    char_pug_toys = 186,
-    char_punk1 = 187,
-    char_punk2 = 188,
-    char_punk3 = 189,
-    char_queen_bee = 190,
-    char_red_panda = 191,
-    char_rocker = 192,
-    char_rockstar = 193,
-    char_rockstar2 = 194,
-    char_royal1 = 195,
-    char_royal2a = 196,
-    char_royal2b = 197,
-    char_ruby = 198,
-    char_samurai = 199,
-    char_scifi_soldier_2 = 200,
-    char_scout = 201,
-    char_seahorse = 202,
-    char_shaggy = 203,
-    char_shark1 = 204,
-    char_shark2 = 205,
-    char_skater = 206,
-    char_skeleton = 207,
-    char_skeleton_amigurumi = 208,
-    char_snail = 209,
-    char_snail_honey = 210,
-    char_spaghetti1 = 211,
-    char_spaghetti2 = 212,
-    char_spider1 = 213,
-    char_spider2 = 214,
-    char_strawberry = 215,
-    char_superhero = 216,
-    char_thief = 217,
-    char_tiger = 218,
-    char_volleyball1 = 219,
-    char_volleyball2 = 220,
-    char_waiter1 = 221,
-    char_waiter2 = 222,
-    char_waiter3 = 223,
-    char_weasel = 224,
-    char_wizard1a = 225,
-    char_wizard2 = 226,
-    char_wizard2a = 227,
-    char_wolf1 = 228,
-    char_wolf2 = 229,
-    char_wolf3 = 230,
+    char_capybara_amigurumi = 34,
+    char_capybara_amigurumi_pink = 35,
+    char_capybara2 = 36,
+    char_cat1 = 37,
+    char_cat2 = 38,
+    char_cat3 = 39,
+    char_cheetah = 40,
+    char_cleric = 41,
+    char_crab1 = 42,
+    char_crab2 = 43,
+    char_crow = 44,
+    char_crow_earth = 45,
+    char_crow_jupiter = 46,
+    char_crow_magical = 47,
+    char_crow_mars = 48,
+    char_crow_mercury = 49,
+    char_crow_moon = 50,
+    char_crow_moon_2 = 51,
+    char_crow_neptune = 52,
+    char_crow_pluto = 53,
+    char_crow_saturn = 54,
+    char_crow_uranus = 55,
+    char_crow_venus = 56,
+    char_detective1 = 57,
+    char_detective2 = 58,
+    char_devil1 = 59,
+    char_devil2 = 60,
+    char_displacer_beast = 61,
+    char_diver1 = 62,
+    char_diver2 = 63,
+    char_diver3 = 64,
+    char_dog1 = 65,
+    char_dragon1 = 66,
+    char_dragon2 = 67,
+    char_dragon3_fire = 68,
+    char_dragon3_ice = 69,
+    char_druid = 70,
+    char_duck1 = 71,
+    char_duck2 = 72,
+    char_duck3 = 73,
+    char_eel = 74,
+    char_element_air = 75,
+    char_element_earth = 76,
+    char_element_fire = 77,
+    char_elemental_water = 78,
+    char_emerald = 79,
+    char_explorer = 80,
+    char_friar = 81,
+    char_frog_costume_2 = 82,
+    char_frog1 = 83,
+    char_frog2 = 84,
+    char_frog3 = 85,
+    char_frog4 = 86,
+    char_goblin = 87,
+    char_hair = 88,
+    char_hamburger = 89,
+    char_hello_kitty = 90,
+    char_hello_kitty_long = 91,
+    char_honey_snail = 92,
+    char_icecream1 = 93,
+    char_icecream2 = 94,
+    char_karate1 = 95,
+    char_karate2 = 96,
+    char_knight_amigurumi = 97,
+    char_knight_axe = 98,
+    char_knight_banner = 99,
+    char_knight_blue = 100,
+    char_knight_blue_swords = 101,
+    char_knight_dual_swords = 102,
+    char_knight_evil1 = 103,
+    char_knight_evil3 = 104,
+    char_knight_gold = 105,
+    char_knight_gold_red_swords = 106,
+    char_knight_ice_cream_vanilla = 107,
+    char_knight_ice_cream_various = 108,
+    char_knight_octopus_2 = 109,
+    char_knight_octopus_3 = 110,
+    char_knight_pegasus = 111,
+    char_knight_pink = 112,
+    char_knight_red_swords = 113,
+    char_knight_red_swords_dragon1 = 114,
+    char_knight_red_swords_dragon2 = 115,
+    char_knight_scifi = 116,
+    char_knight1 = 117,
+    char_knight2 = 118,
+    char_knight4 = 119,
+    char_knight4b = 120,
+    char_knight5b = 121,
+    char_kuromi = 122,
+    char_kuromi_good = 123,
+    char_kuromi1 = 124,
+    char_laser_sword = 125,
+    char_lich = 126,
+    char_lion_adult = 127,
+    char_mermaid1 = 128,
+    char_mermaid2a = 129,
+    char_mermaid2b = 130,
+    char_mermaid2c = 131,
+    char_mermaid3a = 132,
+    char_mermaid4a = 133,
+    char_monk = 134,
+    char_monk_elemental = 135,
+    char_monk3 = 136,
+    char_mummy = 137,
+    char_mummy2 = 138,
+    char_mummy3 = 139,
+    char_mushroom_frogs_1 = 140,
+    char_mushroom_frogs_2 = 141,
+    char_mushroom_frogs_3 = 142,
+    char_mushroom1 = 143,
+    char_mushroom2a = 144,
+    char_mushroom2b = 145,
+    char_mushroom3a = 146,
+    char_mushroom3c = 147,
+    char_mushroom4a = 148,
+    char_mustache_chef = 149,
+    char_mustache_painter = 150,
+    char_mustache1 = 151,
+    char_mustache2a = 152,
+    char_mustache2b = 153,
+    char_my_sweet_piano = 154,
+    char_my_sweet_piano_green = 155,
+    char_mymelo = 156,
+    char_mymelo_pets = 157,
+    char_mymelo1 = 158,
+    char_ninja = 159,
+    char_octocat = 160,
+    char_octopanther = 161,
+    char_octopus = 162,
+    char_octopus1 = 163,
+    char_octopus2 = 164,
+    char_octopus3 = 165,
+    char_paladin = 166,
+    char_panda = 167,
+    char_panda_amigurumi = 168,
+    char_penguin1 = 169,
+    char_penguin2a = 170,
+    char_penguin2b = 171,
+    char_penguin2c = 172,
+    char_pizza = 173,
+    char_plant1 = 174,
+    char_plant2 = 175,
+    char_plant3 = 176,
+    char_pope = 177,
+    char_popstar = 178,
+    char_postman = 179,
+    char_postman2 = 180,
+    char_postman3 = 181,
+    char_priest = 182,
+    char_priestess = 183,
+    char_princess = 184,
+    char_princess_blue = 185,
+    char_princess_red = 186,
+    char_princess_white = 187,
+    char_princess_white_hamster = 188,
+    char_princess_yellow = 189,
+    char_pug = 190,
+    char_pug_toys = 191,
+    char_punk1 = 192,
+    char_punk2 = 193,
+    char_punk3 = 194,
+    char_queen_bee = 195,
+    char_red_panda = 196,
+    char_rocker = 197,
+    char_rockstar = 198,
+    char_rockstar2 = 199,
+    char_royal1 = 200,
+    char_royal2a = 201,
+    char_royal2b = 202,
+    char_ruby = 203,
+    char_samurai = 204,
+    char_scifi_soldier_2 = 205,
+    char_scout = 206,
+    char_seahorse = 207,
+    char_shaggy = 208,
+    char_shark1 = 209,
+    char_shark2 = 210,
+    char_skater = 211,
+    char_skeleton = 212,
+    char_skeleton_amigurumi = 213,
+    char_snail = 214,
+    char_snail_honey = 215,
+    char_spaghetti1 = 216,
+    char_spaghetti2 = 217,
+    char_spider1 = 218,
+    char_spider2 = 219,
+    char_strawberry = 220,
+    char_superhero = 221,
+    char_thief = 222,
+    char_tiger = 223,
+    char_volleyball1 = 224,
+    char_volleyball2 = 225,
+    char_waiter1 = 226,
+    char_waiter2 = 227,
+    char_waiter3 = 228,
+    char_weasel = 229,
+    char_wizard1a = 230,
+    char_wizard2 = 231,
+    char_wizard2a = 232,
+    char_wolf1 = 233,
+    char_wolf2 = 234,
+    char_wolf3 = 235,
     char_count
 };
 struct CharacterInfo {
@@ -239,7 +244,7 @@ struct CharacterInfo {
 };
 
 const CharacterId char_alienEvolutions[] = {char_emerald, char_snail};
-const CharacterId char_amigurumi1Evolutions[] = {char_amigurumi2, char_knight_amigurumi, char_skeleton_amigurumi};
+const CharacterId char_amigurumi1Evolutions[] = {char_amigurumi2, char_capybara_amigurumi, char_knight_amigurumi, char_skeleton_amigurumi};
 const CharacterId char_amigurumi2Evolutions[] = {char_amigurumi1, char_amigurumi3};
 const CharacterId char_amigurumi3Evolutions[] = {char_amigurumi2};
 const CharacterId char_angelEvolutions[] = {char_devil1, char_pope, char_superhero};
@@ -271,13 +276,15 @@ const CharacterId char_black_pantherEvolutions[] = {char_cheetah, char_displacer
 const CharacterId char_cabbageEvolutions[] = {char_avocado, char_cabbage2, char_plant1};
 const CharacterId char_cabbage2Evolutions[] = {char_cabbage};
 const CharacterId char_cactusEvolutions[] = {char_plant1};
-const CharacterId char_capybaraEvolutions[] = {char_capybara2, char_cat1, char_kuromi1, char_mymelo1};
+const CharacterId char_capybaraEvolutions[] = {char_capybara_amigurumi, char_capybara2, char_cat1, char_kuromi1, char_mymelo1};
+const CharacterId char_capybara_amigurumiEvolutions[] = {char_amigurumi1, char_capybara, char_capybara_amigurumi_pink, char_panda_amigurumi};
+const CharacterId char_capybara_amigurumi_pinkEvolutions[] = {char_capybara_amigurumi, char_my_sweet_piano};
 const CharacterId char_capybara2Evolutions[] = {char_capybara};
 const CharacterId char_cat1Evolutions[] = {char_base, char_capybara, char_cat2, char_dog1};
 const CharacterId char_cat2Evolutions[] = {char_cat1, char_cat3, char_weasel};
 const CharacterId char_cat3Evolutions[] = {char_cat2, char_cheetah, char_lion_adult};
 const CharacterId char_cheetahEvolutions[] = {char_black_panther, char_cat3, char_tiger};
-const CharacterId char_clericEvolutions[] = {char_monk, char_wizard2a};
+const CharacterId char_clericEvolutions[] = {char_monk, char_priestess, char_wizard2a};
 const CharacterId char_crab1Evolutions[] = {char_crab2, char_diver1, char_spider1};
 const CharacterId char_crab2Evolutions[] = {char_crab1};
 const CharacterId char_crowEvolutions[] = {char_crow_magical, char_crow_moon, char_duck2};
@@ -298,7 +305,7 @@ const CharacterId char_detective2Evolutions[] = {char_detective1};
 const CharacterId char_devil1Evolutions[] = {char_angel, char_devil2, char_dragon1};
 const CharacterId char_devil2Evolutions[] = {char_devil1, char_ruby};
 const CharacterId char_displacer_beastEvolutions[] = {char_black_panther, char_octocat};
-const CharacterId char_diver1Evolutions[] = {char_axolotl1, char_base, char_crab1, char_diver2, char_frog1, char_octopus1, char_seahorse, char_shark1};
+const CharacterId char_diver1Evolutions[] = {char_axolotl1, char_base, char_crab1, char_diver2, char_frog_costume_2, char_octopus1, char_seahorse, char_shark1};
 const CharacterId char_diver2Evolutions[] = {char_diver1, char_diver3};
 const CharacterId char_diver3Evolutions[] = {char_astronaut, char_diver2};
 const CharacterId char_dog1Evolutions[] = {char_beagle, char_cat1, char_wolf1};
@@ -318,8 +325,8 @@ const CharacterId char_elemental_waterEvolutions[] = {char_element_air, char_ele
 const CharacterId char_emeraldEvolutions[] = {char_alien, char_ruby};
 const CharacterId char_explorerEvolutions[] = {char_scout};
 const CharacterId char_friarEvolutions[] = {char_monk, char_priest, char_scout};
-const CharacterId char_frog1Evolutions[] = {char_diver1, char_frog2};
-const CharacterId char_frog2Evolutions[] = {char_frog1, char_frog3};
+const CharacterId char_frog_costume_2Evolutions[] = {char_diver1, char_frog2};
+const CharacterId char_frog2Evolutions[] = {char_frog_costume_2, char_frog3};
 const CharacterId char_frog3Evolutions[] = {char_frog2, char_frog4};
 const CharacterId char_frog4Evolutions[] = {char_frog3, char_royal2b};
 const CharacterId char_goblinEvolutions[] = {char_mummy, char_punk1, char_skeleton};
@@ -329,7 +336,7 @@ const CharacterId char_hello_kittyEvolutions[] = {char_hello_kitty_long, char_ku
 const CharacterId char_hello_kitty_longEvolutions[] = {char_hello_kitty};
 const CharacterId char_honey_snailEvolutions[] = {char_queen_bee, char_snail_honey};
 const CharacterId char_icecream1Evolutions[] = {char_banana, char_icecream2, char_knight_ice_cream_vanilla};
-const CharacterId char_icecream2Evolutions[] = {char_icecream1, char_knight_ice_cream_various};
+const CharacterId char_icecream2Evolutions[] = {char_icecream1, char_knight_ice_cream_various, char_my_sweet_piano_green};
 const CharacterId char_karate1Evolutions[] = {char_base, char_karate2, char_knight1, char_volleyball1};
 const CharacterId char_karate2Evolutions[] = {char_karate1};
 const CharacterId char_knight_amigurumiEvolutions[] = {char_amigurumi1, char_knight2};
@@ -360,7 +367,7 @@ const CharacterId char_knight5bEvolutions[] = {char_knight4b, char_mermaid3a};
 const CharacterId char_kuromiEvolutions[] = {char_hello_kitty, char_kuromi_good, char_kuromi1};
 const CharacterId char_kuromi_goodEvolutions[] = {char_kuromi};
 const CharacterId char_kuromi1Evolutions[] = {char_capybara, char_kuromi};
-const CharacterId char_laser_swordEvolutions[] = {char_astronaut, char_knight_blue_swords, char_scifi_soldier_2};
+const CharacterId char_laser_swordEvolutions[] = {char_astronaut, char_knight_blue_swords, char_scifi_soldier_2, char_shaggy};
 const CharacterId char_lichEvolutions[] = {char_beagle4, char_skeleton};
 const CharacterId char_lion_adultEvolutions[] = {char_cat3, char_tiger};
 const CharacterId char_mermaid1Evolutions[] = {char_mermaid2a, char_mermaid2b, char_mermaid2c, char_seahorse};
@@ -389,8 +396,8 @@ const CharacterId char_mustache_painterEvolutions[] = {char_mustache2a, char_mus
 const CharacterId char_mustache1Evolutions[] = {char_base, char_mustache2a, char_waiter1, char_wizard1a};
 const CharacterId char_mustache2aEvolutions[] = {char_mustache_chef, char_mustache_painter, char_mustache1, char_mustache2b};
 const CharacterId char_mustache2bEvolutions[] = {char_mustache_chef, char_mustache_painter, char_mustache2a};
-const CharacterId char_my_sweet_pianoEvolutions[] = {char_hello_kitty, char_knight_pink, char_my_sweet_piano_green};
-const CharacterId char_my_sweet_piano_greenEvolutions[] = {char_my_sweet_piano};
+const CharacterId char_my_sweet_pianoEvolutions[] = {char_capybara_amigurumi_pink, char_hello_kitty, char_knight_pink, char_my_sweet_piano_green};
+const CharacterId char_my_sweet_piano_greenEvolutions[] = {char_icecream2, char_my_sweet_piano};
 const CharacterId char_mymeloEvolutions[] = {char_hello_kitty, char_mymelo_pets, char_mymelo1};
 const CharacterId char_mymelo_petsEvolutions[] = {char_mymelo};
 const CharacterId char_mymelo1Evolutions[] = {char_capybara, char_mymelo};
@@ -402,7 +409,8 @@ const CharacterId char_octopus1Evolutions[] = {char_diver1, char_octopus2};
 const CharacterId char_octopus2Evolutions[] = {char_octopus1, char_octopus3};
 const CharacterId char_octopus3Evolutions[] = {char_elemental_water, char_octopus, char_octopus2};
 const CharacterId char_paladinEvolutions[] = {char_knight1, char_samurai};
-const CharacterId char_pandaEvolutions[] = {char_beaver, char_red_panda};
+const CharacterId char_pandaEvolutions[] = {char_beaver, char_panda_amigurumi, char_red_panda};
+const CharacterId char_panda_amigurumiEvolutions[] = {char_capybara_amigurumi, char_panda};
 const CharacterId char_penguin1Evolutions[] = {char_duck2, char_penguin2a, char_penguin2b, char_penguin2c};
 const CharacterId char_penguin2aEvolutions[] = {char_penguin1};
 const CharacterId char_penguin2bEvolutions[] = {char_penguin1};
@@ -417,12 +425,12 @@ const CharacterId char_postmanEvolutions[] = {char_base, char_postman2, char_wai
 const CharacterId char_postman2Evolutions[] = {char_postman, char_postman3};
 const CharacterId char_postman3Evolutions[] = {char_postman2};
 const CharacterId char_priestEvolutions[] = {char_bishop, char_friar};
-const CharacterId char_princessEvolutions[] = {char_princess_white, char_royal1};
-const CharacterId char_princess_blueEvolutions[] = {char_princess_white};
-const CharacterId char_princess_redEvolutions[] = {char_princess_white};
-const CharacterId char_princess_whiteEvolutions[] = {char_princess, char_princess_blue, char_princess_red, char_princess_white_hamster, char_princess_yellow};
-const CharacterId char_princess_white_hamsterEvolutions[] = {char_princess_white};
-const CharacterId char_princess_yellowEvolutions[] = {char_princess_white};
+const CharacterId char_priestessEvolutions[] = {char_cleric, char_princess_white_hamster};
+const CharacterId char_princessEvolutions[] = {char_princess_white_hamster, char_royal1};
+const CharacterId char_princess_blueEvolutions[] = {char_princess_red, char_princess_white_hamster};
+const CharacterId char_princess_redEvolutions[] = {char_princess_blue, char_princess_white_hamster, char_princess_yellow};
+const CharacterId char_princess_white_hamsterEvolutions[] = {char_priestess, char_princess, char_princess_blue, char_princess_red, char_princess_yellow};
+const CharacterId char_princess_yellowEvolutions[] = {char_princess_red, char_princess_white_hamster};
 const CharacterId char_pugEvolutions[] = {char_beagle, char_pug_toys};
 const CharacterId char_pug_toysEvolutions[] = {char_pug};
 const CharacterId char_punk1Evolutions[] = {char_goblin, char_punk2, char_rocker};
@@ -441,7 +449,7 @@ const CharacterId char_samuraiEvolutions[] = {char_ninja, char_paladin};
 const CharacterId char_scifi_soldier_2Evolutions[] = {char_laser_sword};
 const CharacterId char_scoutEvolutions[] = {char_base, char_detective1, char_explorer, char_friar};
 const CharacterId char_seahorseEvolutions[] = {char_diver1, char_mermaid1};
-const CharacterId char_shaggyEvolutions[] = {char_wolf1};
+const CharacterId char_shaggyEvolutions[] = {char_laser_sword, char_wolf1};
 const CharacterId char_shark1Evolutions[] = {char_diver1, char_shark2};
 const CharacterId char_shark2Evolutions[] = {char_eel, char_shark1};
 const CharacterId char_skaterEvolutions[] = {char_hair};
@@ -471,7 +479,7 @@ const CharacterId char_wolf2Evolutions[] = {char_wolf1, char_wolf3};
 const CharacterId char_wolf3Evolutions[] = {char_wolf2};
 const CharacterInfo characters[char_count] = {
     {char_alienEvolutions, 2},  // char_alien
-    {char_amigurumi1Evolutions, 3},  // char_amigurumi1
+    {char_amigurumi1Evolutions, 4},  // char_amigurumi1
     {char_amigurumi2Evolutions, 2},  // char_amigurumi2
     {char_amigurumi3Evolutions, 1},  // char_amigurumi3
     {char_angelEvolutions, 3},  // char_angel
@@ -503,13 +511,15 @@ const CharacterInfo characters[char_count] = {
     {char_cabbageEvolutions, 3},  // char_cabbage
     {char_cabbage2Evolutions, 1},  // char_cabbage2
     {char_cactusEvolutions, 1},  // char_cactus
-    {char_capybaraEvolutions, 4},  // char_capybara
+    {char_capybaraEvolutions, 5},  // char_capybara
+    {char_capybara_amigurumiEvolutions, 4},  // char_capybara_amigurumi
+    {char_capybara_amigurumi_pinkEvolutions, 2},  // char_capybara_amigurumi_pink
     {char_capybara2Evolutions, 1},  // char_capybara2
     {char_cat1Evolutions, 4},  // char_cat1
     {char_cat2Evolutions, 3},  // char_cat2
     {char_cat3Evolutions, 3},  // char_cat3
     {char_cheetahEvolutions, 3},  // char_cheetah
-    {char_clericEvolutions, 2},  // char_cleric
+    {char_clericEvolutions, 3},  // char_cleric
     {char_crab1Evolutions, 3},  // char_crab1
     {char_crab2Evolutions, 1},  // char_crab2
     {char_crowEvolutions, 3},  // char_crow
@@ -550,7 +560,8 @@ const CharacterInfo characters[char_count] = {
     {char_emeraldEvolutions, 2},  // char_emerald
     {char_explorerEvolutions, 1},  // char_explorer
     {char_friarEvolutions, 3},  // char_friar
-    {char_frog1Evolutions, 2},  // char_frog1
+    {char_frog_costume_2Evolutions, 2},  // char_frog_costume_2
+    {nullptr, 0},  // char_frog1
     {char_frog2Evolutions, 2},  // char_frog2
     {char_frog3Evolutions, 2},  // char_frog3
     {char_frog4Evolutions, 2},  // char_frog4
@@ -561,7 +572,7 @@ const CharacterInfo characters[char_count] = {
     {char_hello_kitty_longEvolutions, 1},  // char_hello_kitty_long
     {char_honey_snailEvolutions, 2},  // char_honey_snail
     {char_icecream1Evolutions, 3},  // char_icecream1
-    {char_icecream2Evolutions, 2},  // char_icecream2
+    {char_icecream2Evolutions, 3},  // char_icecream2
     {char_karate1Evolutions, 4},  // char_karate1
     {char_karate2Evolutions, 1},  // char_karate2
     {char_knight_amigurumiEvolutions, 2},  // char_knight_amigurumi
@@ -592,7 +603,7 @@ const CharacterInfo characters[char_count] = {
     {char_kuromiEvolutions, 3},  // char_kuromi
     {char_kuromi_goodEvolutions, 1},  // char_kuromi_good
     {char_kuromi1Evolutions, 2},  // char_kuromi1
-    {char_laser_swordEvolutions, 3},  // char_laser_sword
+    {char_laser_swordEvolutions, 4},  // char_laser_sword
     {char_lichEvolutions, 2},  // char_lich
     {char_lion_adultEvolutions, 2},  // char_lion_adult
     {char_mermaid1Evolutions, 4},  // char_mermaid1
@@ -621,8 +632,8 @@ const CharacterInfo characters[char_count] = {
     {char_mustache1Evolutions, 4},  // char_mustache1
     {char_mustache2aEvolutions, 4},  // char_mustache2a
     {char_mustache2bEvolutions, 3},  // char_mustache2b
-    {char_my_sweet_pianoEvolutions, 3},  // char_my_sweet_piano
-    {char_my_sweet_piano_greenEvolutions, 1},  // char_my_sweet_piano_green
+    {char_my_sweet_pianoEvolutions, 4},  // char_my_sweet_piano
+    {char_my_sweet_piano_greenEvolutions, 2},  // char_my_sweet_piano_green
     {char_mymeloEvolutions, 3},  // char_mymelo
     {char_mymelo_petsEvolutions, 1},  // char_mymelo_pets
     {char_mymelo1Evolutions, 2},  // char_mymelo1
@@ -634,7 +645,8 @@ const CharacterInfo characters[char_count] = {
     {char_octopus2Evolutions, 2},  // char_octopus2
     {char_octopus3Evolutions, 3},  // char_octopus3
     {char_paladinEvolutions, 2},  // char_paladin
-    {char_pandaEvolutions, 2},  // char_panda
+    {char_pandaEvolutions, 3},  // char_panda
+    {char_panda_amigurumiEvolutions, 2},  // char_panda_amigurumi
     {char_penguin1Evolutions, 4},  // char_penguin1
     {char_penguin2aEvolutions, 1},  // char_penguin2a
     {char_penguin2bEvolutions, 1},  // char_penguin2b
@@ -649,12 +661,13 @@ const CharacterInfo characters[char_count] = {
     {char_postman2Evolutions, 2},  // char_postman2
     {char_postman3Evolutions, 1},  // char_postman3
     {char_priestEvolutions, 2},  // char_priest
+    {char_priestessEvolutions, 2},  // char_priestess
     {char_princessEvolutions, 2},  // char_princess
-    {char_princess_blueEvolutions, 1},  // char_princess_blue
-    {char_princess_redEvolutions, 1},  // char_princess_red
-    {char_princess_whiteEvolutions, 5},  // char_princess_white
-    {char_princess_white_hamsterEvolutions, 1},  // char_princess_white_hamster
-    {char_princess_yellowEvolutions, 1},  // char_princess_yellow
+    {char_princess_blueEvolutions, 2},  // char_princess_blue
+    {char_princess_redEvolutions, 3},  // char_princess_red
+    {nullptr, 0},  // char_princess_white
+    {char_princess_white_hamsterEvolutions, 5},  // char_princess_white_hamster
+    {char_princess_yellowEvolutions, 2},  // char_princess_yellow
     {char_pugEvolutions, 2},  // char_pug
     {char_pug_toysEvolutions, 1},  // char_pug_toys
     {char_punk1Evolutions, 3},  // char_punk1
@@ -673,7 +686,7 @@ const CharacterInfo characters[char_count] = {
     {char_scifi_soldier_2Evolutions, 1},  // char_scifi_soldier_2
     {char_scoutEvolutions, 4},  // char_scout
     {char_seahorseEvolutions, 2},  // char_seahorse
-    {char_shaggyEvolutions, 1},  // char_shaggy
+    {char_shaggyEvolutions, 2},  // char_shaggy
     {char_shark1Evolutions, 2},  // char_shark1
     {char_shark2Evolutions, 2},  // char_shark2
     {char_skaterEvolutions, 1},  // char_skater
