@@ -1,43 +1,23 @@
 #include <M5Unified.h>
 #include <LittleFS.h>
 #include <math.h>
-
+#include "evolutions.h"
 namespace {
 
 constexpr unsigned long FRAME_INTERVAL_MS = 1000;
 constexpr unsigned long HUNGER_DURATION_MS = 2UL * 60UL * 1000UL;
 
-enum CharacterId {
-    BASE,
-    CAT1,
-    CAT2,
-    DIVER1,
-    DIVER2,
-    CHARACTER_COUNT
+struct __attribute__((packed)) Header {
+    uint32_t magic;
+    uint16_t version;
+    uint16_t count;
+    uint32_t offsets[char_count];
 };
 
-const CharacterId baseEvolutions[] = {CAT1, DIVER1};
-const CharacterId cat1Evolutions[] = {CAT2, BASE};
-const CharacterId cat2Evolutions[] = {CAT1};
-const CharacterId diver1Evolutions[] = {DIVER2, BASE};
-const CharacterId diver2Evolutions[] = {DIVER1};
-
-struct CharacterInfo {
-    const char* name;
-    const CharacterId* evolutions;
-    uint8_t evolutionCount;
-};
-
-const CharacterInfo characters[CHARACTER_COUNT] = {
-    {"base", baseEvolutions, 2},
-    {"cat1", cat1Evolutions, 2},
-    {"cat2", cat2Evolutions, 1},
-    {"diver1", diver1Evolutions, 2},
-    {"diver2", diver2Evolutions, 1}
-};
-
-CharacterId currentCharacter = BASE;
-CharacterId evolutionTarget = BASE;
+File image_bin;
+Header header;
+CharacterId currentCharacter = char_base;
+CharacterId evolutionTarget = char_base;
 unsigned long lastFrameTime = 0;
 unsigned long lastFedTime = 0;
 float evolutionRotationDegrees = 0.0f;
@@ -56,13 +36,10 @@ int hungerPercent()
 
 void drawFrame(CharacterId character, uint8_t frame)
 {
-    char filename[48];
-    snprintf(filename, sizeof(filename), "/assets/%s/%u.jpg",
-             characters[character].name, frame);
-
+    const uint32_t startOffset = header.offsets[character];
     M5.Display.fillScreen(TFT_BLACK);
-    File image = LittleFS.open(filename, "r");
-    M5.Display.drawJpg(static_cast<Stream*>(&image), 0, 0);
+    image_bin.seek(startOffset, SeekSet);
+    M5.Display.drawJpg(static_cast<Stream*>(&image_bin), 0, 0);
 }
 
 void startEvolution()
@@ -167,14 +144,25 @@ void setup()
     M5.begin(cfg);
     M5.Display.setRotation(0);
     M5.Display.fillScreen(TFT_BLACK);
-
-    if (!LittleFS.begin(true)) {
-        M5.Display.setCursor(10, 10);
+    // Serial.begin(115200);
+    // delay(1000);
+    Serial.println("BOOT");
+    Serial.printf("LittleFS total: %u\n", LittleFS.totalBytes());
+    Serial.printf("LittleFS used:  %u\n", LittleFS.usedBytes());
+    bool mounted = LittleFS.begin(true);
+    Serial.printf("LittleFS mount: %s\n", mounted ? "OK" : "FAIL");
+    if (mounted) {
+        Serial.printf("LittleFS total: %u\n", LittleFS.totalBytes());
+        Serial.printf("LittleFS used:  %u\n", LittleFS.usedBytes());
+    }
+    image_bin = LittleFS.open("/images.bin", "r");
+    if (!image_bin) {
+        M5.Display.setCursor(10, 30);
         M5.Display.setTextSize(2);
-        M5.Display.println("LittleFS failed!");
+        M5.Display.println("Failed to open images.bin!");
         return;
     }
-
+    image_bin.read(reinterpret_cast<uint8_t*>(&header), sizeof(Header));
     filesystemReady = true;
     randomSeed(micros());
     lastFedTime = millis();
