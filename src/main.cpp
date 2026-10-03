@@ -11,10 +11,12 @@ struct __attribute__((packed)) Header {
     uint32_t magic;
     uint16_t version;
     uint16_t count;
-    uint32_t offsets[char_count];
+    uint32_t offsets[char_count * 8];
 };
 
 File image_bin;
+M5Canvas frameBuffer(&M5.Display);
+bool frameBufferReady = false;
 Header header;
 CharacterId currentCharacter = char_base;
 CharacterId evolutionTarget = char_base;
@@ -36,10 +38,17 @@ int hungerPercent()
 
 void drawFrame(CharacterId character, uint8_t frame)
 {
-    const uint32_t startOffset = header.offsets[character];
-    M5.Display.fillScreen(TFT_BLACK);
+    Serial.printf("Drawing frame %d for character %d\n", frame, character);
+    const uint32_t startOffset = header.offsets[character * 8 + frame];
     image_bin.seek(startOffset, SeekSet);
-    M5.Display.drawJpg(static_cast<Stream*>(&image_bin), 0, 0);
+    if (frameBufferReady) {
+        frameBuffer.fillScreen(TFT_BLACK);
+        frameBuffer.drawJpg(static_cast<Stream*>(&image_bin), 0, 0);
+        frameBuffer.pushSprite(0, 0);
+    } else {
+        M5.Display.fillScreen(TFT_BLACK);
+        M5.Display.drawJpg(static_cast<Stream*>(&image_bin), 0, 0);
+    }
 }
 
 void startEvolution()
@@ -85,6 +94,7 @@ void finishEvolution()
     evolutionMode = false;
     if (evolutionTarget != currentCharacter) {
         currentCharacter = evolutionTarget;
+        Serial.printf("New character ID: %d\n", currentCharacter);
         drawFrame(currentCharacter, 0);
     }
     lastFrameTime = millis();
@@ -143,6 +153,8 @@ void setup()
     auto cfg = M5.config();
     M5.begin(cfg);
     M5.Display.setRotation(0);
+    frameBuffer.setColorDepth(16);
+    frameBufferReady = frameBuffer.createSprite(M5.Display.width(), M5.Display.height()) != nullptr;
     M5.Display.fillScreen(TFT_BLACK);
     // Serial.begin(115200);
     // delay(1000);

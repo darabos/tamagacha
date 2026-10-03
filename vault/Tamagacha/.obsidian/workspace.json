@@ -15,13 +15,27 @@
               "state": {
                 "file": "Lineages.canvas",
                 "viewState": {
-                  "x": 1635.9786587363326,
-                  "y": 2444.2475615414337,
-                  "zoom": -0.9562317076325483
+                  "x": 1339.8423393962244,
+                  "y": 4543.621432038919,
+                  "zoom": -2.682906796634198
                 }
               },
               "icon": "lucide-layout-dashboard",
               "title": "Lineages"
+            }
+          },
+          {
+            "id": "a4dd871fdcdd547b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Wishlist.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Wishlist"
             }
           }
         ]
@@ -194,22 +208,22 @@
   },
   "active": "a641834495dcf630",
   "lastOpenFiles": [
-    "images/diver1.jpeg",
+    "hello-kitty-long.jpeg",
+    "hello-kitty.jpeg",
+    "kuromi.jpeg",
+    "my-sweet-piano.jpeg",
+    "my-sweet-piano-green.jpeg",
+    "kuromi1.jpeg",
+    "kuromi-good.jpeg",
+    "mymelo1.jpeg",
+    "mymelo.jpeg",
+    "mymelo-pets.jpeg",
+    "Wishlist.md",
     "Lineages.canvas",
+    "crow.jpeg",
     "Welcome.md",
     "Lineages 1.canvas",
-    "images/xprincess-1.jpeg",
-    "images/monk.jpeg",
-    "images/lich.jpeg",
-    "images/bishop.jpeg",
-    "images/axolotl-crossbow.jpeg",
-    "images/pug.jpeg",
-    "images/pug-toys.jpeg",
-    "images/diver3.jpeg",
-    "images/diver2.jpeg",
-    "images/monk2.jpeg",
     "new images",
-    "images",
-    "Untitled.md"
+    "images"
   ]
 }
