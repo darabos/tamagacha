@@ -15,9 +15,9 @@
               "state": {
                 "file": "Lineages.canvas",
                 "viewState": {
-                  "x": 3339.8809833414753,
-                  "y": 4483.044562077649,
-                  "zoom": -3.3483339982231475
+                  "x": 422.8177537897625,
+                  "y": 2242.8195993944214,
+                  "zoom": -1.735594025552272
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -86,8 +86,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "6249194cda545ffb",
@@ -192,8 +191,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "a4dd871fdcdd547b",
+  "active": "c5f5dea2d5f7c4aa",
   "lastOpenFiles": [
+    "images/pug-amigurumi.jpeg",
     "images/capybara-amigurumi.jpeg",
     "Lineages.canvas",
     "images/panda-amigurumi.jpeg",

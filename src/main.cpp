@@ -6,6 +6,9 @@ namespace {
 
 constexpr unsigned long FRAME_INTERVAL_MS = 1000;
 constexpr unsigned long HUNGER_DURATION_MS = 2UL * 60UL * 1000UL;
+constexpr int EVOLUTION_COMPASS_RADIUS = 30;
+constexpr int EVOLUTION_COMPASS_CENTER_Y = 205;
+constexpr float DEGREES_TO_RADIANS = 3.14159265358979323846f / 180.0f;
 
 struct __attribute__((packed)) Header {
     uint32_t magic;
@@ -43,11 +46,46 @@ void drawFrame(CharacterId character, uint8_t frame)
     image_bin.seek(startOffset, SeekSet);
     if (frameBufferReady) {
         frameBuffer.fillScreen(TFT_BLACK);
-        frameBuffer.drawJpg(static_cast<Stream*>(&image_bin), 0, 0);
+        frameBuffer.drawJpg(static_cast<Stream*>(&image_bin), 6, 0);
         frameBuffer.pushSprite(0, 0);
     } else {
         M5.Display.fillScreen(TFT_BLACK);
-        M5.Display.drawJpg(static_cast<Stream*>(&image_bin), 0, 0);
+        M5.Display.drawJpg(static_cast<Stream*>(&image_bin), 6, 0);
+    }
+}
+
+void drawEvolutionCompass()
+{
+    lgfx::LGFXBase& canvas = frameBufferReady
+        ? static_cast<lgfx::LGFXBase&>(frameBuffer)
+        : static_cast<lgfx::LGFXBase&>(M5.Display);
+    const int centerX = M5.Display.width() / 2;
+    const int left = centerX - EVOLUTION_COMPASS_RADIUS;
+    const int top = EVOLUTION_COMPASS_CENTER_Y - EVOLUTION_COMPASS_RADIUS;
+    const int size = EVOLUTION_COMPASS_RADIUS * 2 + 1;
+    canvas.fillRect(left, top, size, size, TFT_BLACK);
+    canvas.drawCircle(centerX, EVOLUTION_COMPASS_CENTER_Y,
+        EVOLUTION_COMPASS_RADIUS, TFT_WHITE);
+
+    const uint8_t segmentCount = characters[currentCharacter].evolutionCount + 1;
+    const float segmentWidth = 360.0f / segmentCount;
+    if (segmentCount > 1) {
+        for (uint8_t i = 0; i < segmentCount; ++i) {
+            const float angle = ((i + 0.5f) * segmentWidth + evolutionRotationDegrees)
+                * DEGREES_TO_RADIANS;
+            const int endX = centerX + lroundf(sinf(angle) * EVOLUTION_COMPASS_RADIUS);
+            const int endY = EVOLUTION_COMPASS_CENTER_Y
+                - lroundf(cosf(angle) * EVOLUTION_COMPASS_RADIUS);
+            canvas.drawLine(centerX, EVOLUTION_COMPASS_CENTER_Y, endX, endY, TFT_WHITE);
+        }
+    }
+    canvas.fillTriangle(centerX, top + 3, centerX - 3, top + 9,
+        centerX + 3, top + 9, TFT_WHITE);
+
+    if (frameBufferReady) {
+        M5.Display.setClipRect(left, top, size, size);
+        frameBuffer.pushSprite(0, 0);
+        M5.Display.clearClipRect();
     }
 }
 
@@ -58,6 +96,7 @@ void startEvolution()
     evolutionRotationDegrees = 0.0f;
     lastImuTime = micros();
     drawFrame(currentCharacter, 7);
+    drawEvolutionCompass();
 }
 
 void updateEvolutionPreview()
@@ -67,7 +106,7 @@ void updateEvolutionPreview()
     const uint32_t elapsedMicros = now - lastImuTime;
     lastImuTime = now;
 
-    evolutionRotationDegrees += imuData.gyro.x * (elapsedMicros / 1000000.0f);
+    evolutionRotationDegrees += imuData.gyro.z * (elapsedMicros / 1000000.0f);
     evolutionRotationDegrees = fmodf(evolutionRotationDegrees, 360.0f);
     if (evolutionRotationDegrees < 0.0f) {
         evolutionRotationDegrees += 360.0f;
@@ -87,6 +126,7 @@ void updateEvolutionPreview()
         evolutionTarget = target;
         drawFrame(evolutionTarget, 7);
     }
+    drawEvolutionCompass();
 }
 
 void finishEvolution()
@@ -95,8 +135,8 @@ void finishEvolution()
     if (evolutionTarget != currentCharacter) {
         currentCharacter = evolutionTarget;
         Serial.printf("New character ID: %d\n", currentCharacter);
-        drawFrame(currentCharacter, 0);
     }
+    drawFrame(currentCharacter, 0);
     lastFrameTime = millis();
 }
 
