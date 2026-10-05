@@ -10,6 +10,10 @@ Release button B to make your choice.
 
 ![base](assets/base/0.jpg) ![plant1](assets/plant1/6.jpg) ![eel](assets/eel/0.jpg) ![astronaut](assets/astronaut/5.jpg)
 
+## Installation
+
+Install from M5Burner in a browser: https://burner.m5stack.com/share/firmware/SXL9CP
+
 ## Make your own
 
 Open the vault directory in [Obsidian](https://obsidian.md/). Edit the Lineages canvas.

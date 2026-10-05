@@ -191,51 +191,52 @@ enum CharacterId {
     char_princess_white_hamster = 188,
     char_princess_yellow = 189,
     char_pug = 190,
-    char_pug_toys = 191,
-    char_punk1 = 192,
-    char_punk2 = 193,
-    char_punk3 = 194,
-    char_queen_bee = 195,
-    char_red_panda = 196,
-    char_rocker = 197,
-    char_rockstar = 198,
-    char_rockstar2 = 199,
-    char_royal1 = 200,
-    char_royal2a = 201,
-    char_royal2b = 202,
-    char_ruby = 203,
-    char_samurai = 204,
-    char_scifi_soldier_2 = 205,
-    char_scout = 206,
-    char_seahorse = 207,
-    char_shaggy = 208,
-    char_shark1 = 209,
-    char_shark2 = 210,
-    char_skater = 211,
-    char_skeleton = 212,
-    char_skeleton_amigurumi = 213,
-    char_snail = 214,
-    char_snail_honey = 215,
-    char_spaghetti1 = 216,
-    char_spaghetti2 = 217,
-    char_spider1 = 218,
-    char_spider2 = 219,
-    char_strawberry = 220,
-    char_superhero = 221,
-    char_thief = 222,
-    char_tiger = 223,
-    char_volleyball1 = 224,
-    char_volleyball2 = 225,
-    char_waiter1 = 226,
-    char_waiter2 = 227,
-    char_waiter3 = 228,
-    char_weasel = 229,
-    char_wizard1a = 230,
-    char_wizard2 = 231,
-    char_wizard2a = 232,
-    char_wolf1 = 233,
-    char_wolf2 = 234,
-    char_wolf3 = 235,
+    char_pug_amigurumi = 191,
+    char_pug_toys = 192,
+    char_punk1 = 193,
+    char_punk2 = 194,
+    char_punk3 = 195,
+    char_queen_bee = 196,
+    char_red_panda = 197,
+    char_rocker = 198,
+    char_rockstar = 199,
+    char_rockstar2 = 200,
+    char_royal1 = 201,
+    char_royal2a = 202,
+    char_royal2b = 203,
+    char_ruby = 204,
+    char_samurai = 205,
+    char_scifi_soldier_2 = 206,
+    char_scout = 207,
+    char_seahorse = 208,
+    char_shaggy = 209,
+    char_shark1 = 210,
+    char_shark2 = 211,
+    char_skater = 212,
+    char_skeleton = 213,
+    char_skeleton_amigurumi = 214,
+    char_snail = 215,
+    char_snail_honey = 216,
+    char_spaghetti1 = 217,
+    char_spaghetti2 = 218,
+    char_spider1 = 219,
+    char_spider2 = 220,
+    char_strawberry = 221,
+    char_superhero = 222,
+    char_thief = 223,
+    char_tiger = 224,
+    char_volleyball1 = 225,
+    char_volleyball2 = 226,
+    char_waiter1 = 227,
+    char_waiter2 = 228,
+    char_waiter3 = 229,
+    char_weasel = 230,
+    char_wizard1a = 231,
+    char_wizard2 = 232,
+    char_wizard2a = 233,
+    char_wolf1 = 234,
+    char_wolf2 = 235,
+    char_wolf3 = 236,
     char_count
 };
 struct CharacterInfo {
@@ -277,7 +278,7 @@ const CharacterId char_cabbageEvolutions[] = {char_avocado, char_cabbage2, char_
 const CharacterId char_cabbage2Evolutions[] = {char_cabbage};
 const CharacterId char_cactusEvolutions[] = {char_plant1};
 const CharacterId char_capybaraEvolutions[] = {char_capybara_amigurumi, char_capybara2, char_cat1, char_kuromi1, char_mymelo1};
-const CharacterId char_capybara_amigurumiEvolutions[] = {char_amigurumi1, char_capybara, char_capybara_amigurumi_pink, char_panda_amigurumi};
+const CharacterId char_capybara_amigurumiEvolutions[] = {char_amigurumi1, char_capybara, char_capybara_amigurumi_pink, char_panda_amigurumi, char_pug_amigurumi};
 const CharacterId char_capybara_amigurumi_pinkEvolutions[] = {char_capybara_amigurumi, char_my_sweet_piano};
 const CharacterId char_capybara2Evolutions[] = {char_capybara};
 const CharacterId char_cat1Evolutions[] = {char_base, char_capybara, char_cat2, char_dog1};
@@ -431,7 +432,8 @@ const CharacterId char_princess_blueEvolutions[] = {char_princess_red, char_prin
 const CharacterId char_princess_redEvolutions[] = {char_princess_blue, char_princess_white_hamster, char_princess_yellow};
 const CharacterId char_princess_white_hamsterEvolutions[] = {char_priestess, char_princess, char_princess_blue, char_princess_red, char_princess_yellow};
 const CharacterId char_princess_yellowEvolutions[] = {char_princess_red, char_princess_white_hamster};
-const CharacterId char_pugEvolutions[] = {char_beagle, char_pug_toys};
+const CharacterId char_pugEvolutions[] = {char_beagle, char_pug_amigurumi, char_pug_toys};
+const CharacterId char_pug_amigurumiEvolutions[] = {char_capybara_amigurumi, char_pug};
 const CharacterId char_pug_toysEvolutions[] = {char_pug};
 const CharacterId char_punk1Evolutions[] = {char_goblin, char_punk2, char_rocker};
 const CharacterId char_punk2Evolutions[] = {char_punk1, char_punk3};
@@ -512,7 +514,7 @@ const CharacterInfo characters[char_count] = {
     {char_cabbage2Evolutions, 1},  // char_cabbage2
     {char_cactusEvolutions, 1},  // char_cactus
     {char_capybaraEvolutions, 5},  // char_capybara
-    {char_capybara_amigurumiEvolutions, 4},  // char_capybara_amigurumi
+    {char_capybara_amigurumiEvolutions, 5},  // char_capybara_amigurumi
     {char_capybara_amigurumi_pinkEvolutions, 2},  // char_capybara_amigurumi_pink
     {char_capybara2Evolutions, 1},  // char_capybara2
     {char_cat1Evolutions, 4},  // char_cat1
@@ -668,7 +670,8 @@ const CharacterInfo characters[char_count] = {
     {nullptr, 0},  // char_princess_white
     {char_princess_white_hamsterEvolutions, 5},  // char_princess_white_hamster
     {char_princess_yellowEvolutions, 2},  // char_princess_yellow
-    {char_pugEvolutions, 2},  // char_pug
+    {char_pugEvolutions, 3},  // char_pug
+    {char_pug_amigurumiEvolutions, 2},  // char_pug_amigurumi
     {char_pug_toysEvolutions, 1},  // char_pug_toys
     {char_punk1Evolutions, 3},  // char_punk1
     {char_punk2Evolutions, 2},  // char_punk2
