@@ -234,7 +234,7 @@
 		{"id":"4d863ec9e0fd5ae6","type":"file","file":"images/dog1.jpeg","x":1960,"y":4788,"width":399,"height":218},
 		{"id":"028ea979181028d2","type":"file","file":"images/wolf1.jpeg","x":1960,"y":4472,"width":399,"height":218},
 		{"id":"e8c19e8755d6cffe","type":"file","file":"images/shaggy.jpeg","x":1960,"y":4223,"width":399,"height":218},
-		{"id":"fcbc304cab229380","x":-440,"y":4469,"width":400,"height":218,"type":"file","file":"images/pug-amigurumi.jpeg"}
+		{"id":"fcbc304cab229380","type":"file","file":"images/pug-amigurumi.jpeg","x":-440,"y":4469,"width":399,"height":218}
 	],
 	"edges":[
 		{"id":"4d04e01df5c2e08c","fromNode":"bf6e7da35d0fae51","fromSide":"top","toNode":"cbc2ecd57330c9d6","toSide":"bottom"},

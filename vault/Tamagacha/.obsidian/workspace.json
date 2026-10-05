@@ -15,9 +15,9 @@
               "state": {
                 "file": "Lineages.canvas",
                 "viewState": {
-                  "x": 97.22160151659038,
-                  "y": 4875.861088196889,
-                  "zoom": -0.8448513818780569
+                  "x": 3067.878022503243,
+                  "y": 4728.334054757252,
+                  "zoom": -3.308654893934731
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -86,7 +86,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "6249194cda545ffb",
@@ -191,7 +192,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "c5f5dea2d5f7c4aa",
+  "active": "a4dd871fdcdd547b",
   "lastOpenFiles": [
     "images/pug-amigurumi.jpeg",
     "images/capybara-amigurumi.jpeg",

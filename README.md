@@ -10,6 +10,8 @@ Release button B to make your choice.
 
 ![base](assets/base/0.jpg) ![plant1](assets/plant1/6.jpg) ![eel](assets/eel/0.jpg) ![astronaut](assets/astronaut/5.jpg)
 
+[Full evolution tree](assets/evolutions.jpg)
+
 ## Installation
 
 Install from M5Burner in a browser: https://burner.m5stack.com/share/firmware/SXL9CP
